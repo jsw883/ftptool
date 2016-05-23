@@ -57,7 +57,7 @@ class PyTestCommand(TestCommand):
 # Setup config
 setup(
     # Package name, version, description, classifiers, and keywords
-    name='ftpwrapper',
+    name='ftptool',
     version='0.1.0',
     description='FTP wrapper implementing a slightly more usable API.',
     classifiers=[
@@ -66,7 +66,7 @@ setup(
         'Topic :: Scientific/Engineering',
         'Programming Language :: Python :: 3.5'
     ],
-    keywords='repository ftp',
+    keywords='repository ftp ftptool',
     # Find packages, namespace specified by directory
     packages=find_packages(exclude=['scripts']),
     package_data={'': ['data/*', 'config/*']},

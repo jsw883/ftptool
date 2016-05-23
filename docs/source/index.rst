@@ -1,5 +1,5 @@
-ftpwrapper
-==========
+ftptool
+=======
 
 FTP wrapper implementing a slightly more usable API.
 

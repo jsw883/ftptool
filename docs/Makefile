@@ -7,12 +7,12 @@ SPHINXBUILD     = sphinx-build
 PAPER           =
 BUILDROOT       = build
 DEPLOYROOT      = ~/deploy
-DEPLOYDIRECTORY = $(DEPLOYROOT)/docs/minimongo
+DEPLOYDIRECTORY = $(DEPLOYROOT)/docs/ftptool
 
 RSYNCDELETEOPT  = --delete
 SSHCONFIG       = docs
 REMOTEROOT      = ~/deploy
-REMOTEDIRECTORY = $(REMOTEROOT)/docs/minimongo
+REMOTEDIRECTORY = $(REMOTEROOT)/docs/ftptool
 
 # User-friendly check for sphinx-build
 ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)

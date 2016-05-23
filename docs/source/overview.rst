@@ -40,8 +40,8 @@ Clone the repository into a convenient directory.
 
 .. code-block:: bash
 
-   git clone git@code.espn.com:ATG/ftpwrapper.git ftpwrapper
-   cd ftpwrapper
+   git clone git@code.espn.com:ATG/ftptool.git ftptool
+   cd ftptool
 
 Setup and expose the package with :code:`python setup.py develop`.
 

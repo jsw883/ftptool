@@ -1,7 +1,7 @@
-ftpwrapper
+ftptool
 ==========
 
-This repository implements a lightweight ORM for interfacing efficiently and easily with MongoDB. The binding is done using `pymongo` under the hood, and allows recursive attribute style indexing for convenience.
+FTP wrapper implementing a slightly more usable API.
 
 ### Setup ###
 
@@ -40,8 +40,8 @@ workon dev
 
 Clone the repository into a convenient directory.
 ```
-git clone git@code.espn.com:ATG/ftpwrapper.git ftpwrapper
-cd ftpwrapper
+git clone git@code.espn.com:ATG/ftpwrapper.git ftptool
+cd ftptool
 ```
 
 Setup and expose the package with `python setup.py develop`.
@@ -50,22 +50,3 @@ Setup and expose the package with `python setup.py develop`.
 python setup.py develop
 ```
 
-Note that `python setup.py develop` will only symlink to your local repository directory, so any code changes should be reflected immediately in the package. This avoids having to run `python setup.py install` every time code is changed (which would be annoying, and might also have other complications).
-
-Test the package with `python setup.py test`.
-
-```
-python setup.py test
-```
-
-This runs the tests in the [tests](./tests) directory, ensuring that binding works with your local MongoDB. You will need to add the following user with readWrite access to a database which will be created and used during testing, and dropped afterward.
-
-```js
-db.createUser({
-    'user': 'ftpwrapperTester',
-    'pwd': 'ftpwrapperTester',
-    'roles':[
-        {'role': 'readWrite', 'db': 'ftpwrapper_testing'}
-    ]
-})
-```
