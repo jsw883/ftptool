@@ -14,18 +14,18 @@ from functools import partial  # required
 
 def parse_dir_listing(
         line, dirs=[], files=[], links=[], pipes=[], sockets=[], devices=[]):
-    """Parses output from :code:`ls -al` and :method:`ftplib.FTP.dir`.
+    """Parses output from :code:`ls -al` and :meth:`ftplib.FTP.dir`.
 
     Args:
-        line (str): output from :code:`ls -al` and :method:`ftplib.FTP.dir`
+        line (str): output from :code:`ls -al` and :meth:`ftplib.FTP.dir`
         **kwargs (dict): dictionary of lists to which to append, where keys
             are a subset of 'dirs', 'files', 'links', 'pipes', 'sockets',
             or 'devices'
 
-    This is intended to be used with :function:`functools.partial`, where you
+    This is intended to be used with :func:`functools.partial`, where you
     first create a dictionary with the desired subset of file types or modes
     to track, and then create a partial function by unpacking the dictionary
-    as named arguments to :function:`parse_dir_listing`, leaving :code:`line`
+    as named arguments to :func:`parse_dir_listing`, leaving :code:`line`
     unspecified.
 
     Solaris specific doors, identified by 'D', are ignored.
@@ -118,7 +118,7 @@ class FTP(object):
         """Current directory.
 
         Defined using the :class:`Property` decorator as the current directory
-        is managed by :method:`ftplib.FTP.pwd` and :method:`ftplib.FTP.cwd` to
+        is managed by :meth:`ftplib.FTP.pwd` and :meth:`ftplib.FTP.cwd` to
         ensure synchronization with the remote server.
         """
         return self.ftp.pwd()
@@ -183,7 +183,7 @@ class FTP(object):
             tuple: tuple containing current directory, a list of directories,
                 and a list of files found in the current directory
 
-        Emmulates :function:`os.walk` for FTP, with the same functionality and
+        Emmulates :func:`os.walk` but for FTP, with the same functionality and
         error handling (backed by the appropriate :class:`ftplib:FTP` methods).
         """
 

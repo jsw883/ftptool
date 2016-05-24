@@ -2,3 +2,5 @@
 
 from . import auxiliary
 from . import ftp
+
+from .ftp import FTP, FTPFileProxy
