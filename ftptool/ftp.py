@@ -159,8 +159,7 @@ class FTP(object):
             directory (str): remote directory
 
         Returns:
-            tuple: tuple containing a list of directories and a list of files
-                found in the current directory
+            tuple: list of directories, list of files found
         """
 
         d = dict(dirs=[], files=[])
@@ -168,7 +167,7 @@ class FTP(object):
 
         self.ftp.dir(directory, p)
 
-        return tuple([d['dirs'], d['files']])
+        return d['dirs'], d['files']
 
     def walk(self, directory, topdown=True, onerror=None, followlinks=False):
         """Generates the file names in a directory tree by walking dynamically.
@@ -176,12 +175,11 @@ class FTP(object):
         Args:
             directory (str): remote directory
             topdown (bool): generate tuples before recursing into subdirectory
-            onerror (function): callback for explicit error handling (optional)
+            onerror (function): callback for explicit error handling
             followlinks (bool): recurse into symbolic links
 
         Yields:
-            tuple: tuple containing current directory, a list of directories,
-                and a list of files found in the current directory
+            tuple: current directory, list of directories, list of files found
 
         Emmulates :func:`os.walk` but for FTP, with the same functionality and
         error handling (backed by the appropriate :class:`ftplib:FTP` methods).
