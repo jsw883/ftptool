@@ -275,7 +275,7 @@ class FTP(object):
         """
 
         if automkdir:
-            os.makedirs(local_directory)
+            os.makedirs(local_directory, exist_ok=True)
 
         for source_directory, dirs, files in self.walk(server_directory):
 
@@ -303,7 +303,7 @@ class FTP(object):
         """
 
         if automkdir:
-            os.makedirs(local_directory)
+            os.makedirs(local_directory, exist_ok=True)
 
         for source_directory, dirs, files in os.walk(local_directory):
 
