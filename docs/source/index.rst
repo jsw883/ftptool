@@ -13,6 +13,7 @@ Index
 
 .. toctree::
 
+   auxiliary
    ftp
 
 * :ref:`genindex`
